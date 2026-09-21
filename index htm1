@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Scanner 😈</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #101014;
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      width: 90%;
+      max-width: 430px;
+      background: #1d1d24;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #000;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    #status {
+      margin: 25px 0;
+      font-size: 18px;
+      min-height: 50px;
+    }
+
+    .loader {
+      width: 70px;
+      height: 70px;
+      border: 7px solid #333;
+      border-top: 7px solid #00ff88;
+      border-radius: 50%;
+      margin: 20px auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    button {
+      background: #00c853;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    #result {
+      display: none;
+    }
+
+    .big {
+      font-size: 55px;
+    }
+
+    .warning {
+      color: #ff5252;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <div id="start">
+    <div class="big">📱</div>
+    <h1>SECRET PHONE SCANNER 😈</h1>
+    <p>তোমার ফোনে কিছু একটা পাওয়া গেছে...</p>
+    <button onclick="startScan()">SCAN NOW</button>
+  </div>
+
+  <div id="scan" style="display:none;">
+    <div class="loader"></div>
+    <h1>Scanning...</h1>
+    <div id="status">ফোন স্ক্যান করা হচ্ছে...</div>
+  </div>
+
+  <div id="result">
+    <div class="big">😂</div>
+    <h1 class="warning">তুমি ধরা খেয়ে গেছো!</h1>
+
+    <p>তোমার ফোনে পাওয়া গেছে:</p>
+
+    <h2>🤣 99% বেশি ঘাঁটাঘাঁটি</h2>
+    <h2>📱 87% Facebook/YouTube</h2>
+    <h2>😴 100% অলসতা</h2>
+
+    <br>
+
+    <h2>এটা আসলে একটা PRANK! 😂</h2>
+
+    <p>
+      চিন্তা করো না। এই ওয়েবপেজ কোনো ব্যক্তিগত তথ্য
+      সংগ্রহ বা সংরক্ষণ করে না।
+    </p>
+  </div>
+
+</div>
+
+<script>
+function startScan() {
+
+  document.getElementById("start").style.display = "none";
+  document.getElementById("scan").style.display = "block";
+
+  let messages = [
+    "ফোনের মেমোরি পরীক্ষা করা হচ্ছে... 📂",
+    "গোপন ফাইল খোঁজা হচ্ছে... 🔍",
+    "ফোনের অলসতা মাপা হচ্ছে... 😂",
+    "বন্ধুর ফোনের রহস্য পরীক্ষা চলছে... 👀",
+    "Final scan চলছে... 😈"
+  ];
+
+  let i = 0;
+
+  let timer = setInterval(function() {
+
+    document.getElementById("status").innerText = messages[i];
+
+    i++;
+
+    if (i >= messages.length) {
+      clearInterval(timer);
+
+      setTimeout(function() {
+
+        document.getElementById("scan").style.display = "none";
+        document.getElementById("result").style.display = "block";
+
+      }, 1000);
+    }
+
+  }, 1200);
+}
+</script>
+
+</body>
+</html>
